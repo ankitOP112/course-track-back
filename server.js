@@ -64,7 +64,7 @@ app.use((req, res) => {
 
 // ✅ Start Server (AWS requires 0.0.0.0 and process.env.PORT)
 console.log("✅ Starting Express server...");
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
