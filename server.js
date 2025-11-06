@@ -8,7 +8,7 @@ const app = express();
 // ✅ CORS Configuration (simple + works in both local & AWS)
 app.use(
   cors({
-    origin: "*",
+    origin: "https://endearing-kataifi-0706f7.netlify.app/",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -64,7 +64,7 @@ app.use((req, res) => {
 
 // ✅ Start Server (AWS requires 0.0.0.0 and process.env.PORT)
 console.log("✅ Starting Express server...");
-const PORT = 3000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
